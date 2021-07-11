@@ -1,0 +1,11 @@
+pipeline{
+    agent any
+    stages{
+        stage("Git Checkout"){
+            steps
+            {
+               git credentialsId: '0e6350f3-500c-41b7-ae85-6baacdb65778', url: 'https://github.com/chandan09/pet-clinic.git'
+            }
+        }
+    }
+}
