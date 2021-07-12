@@ -21,7 +21,7 @@
         state: present
     - name: Start the container
       docker_container:
-        name: hariapp
+        name: petclinic
         image: "chandan2018/petclinic:2.4.5"
         state: started
         published_ports:
