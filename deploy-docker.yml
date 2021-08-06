@@ -1,5 +1,5 @@
 ---
-- hosts: tag_Name_Tomcat_Server
+- hosts: tag_Name_Tomcat_Server_test
   become: True
   tasks:
     - name: Install python pip
