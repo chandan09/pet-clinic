@@ -7,7 +7,7 @@ pipeline{
         stage("Git Checkout"){
             steps
             {
-               git credentialsId: 'd8ac8f7f-5a58-46f6-8e9c-98a95a27bad3', url: 'https://github.com/chandan09/pet-clinic.git'
+               git url: 'https://github.com/chandan09/pet-clinic.git'
             }
         }
         
@@ -36,12 +36,12 @@ pipeline{
             }
         }
         
-        stage('Deploy War'){
+        stage('Deploy Jar'){
             steps{
               
-              ansiblePlaybook credentialsId: 'dev-server', disableHostKeyChecking: true, installation: 'ansible', inventory: 'host.inv', playbook: 'deploy-docker.yml'
+              ansiblePlaybook credentialsId: 'dev-server', disableHostKeyChecking: true, installation: 'Ansible', inventory: '/opt/ansible/inventory/aws_ec2.yaml', playbook: 'deploy-docker.yml'
+             // ansiblePlaybook credentialsId: 'dev-server', disableHostKeyChecking: true, installation: 'ansible', inventory: 'host.inv', playbook: 'deploy-docker.yml'
             }
         }
     }
 }
- 
